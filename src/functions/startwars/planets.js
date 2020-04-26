@@ -1,31 +1,22 @@
 'use strict';
 
-const AWS = require('aws-sdk'); // eslint-disable-line import/no-extraneous-dependencies
+const request  = require('request');
 
-const dynamoDb = new AWS.DynamoDB.DocumentClient();
-const params = {
-  TableName: process.env.DYNAMODB_TABLE,
-};
 
 module.exports.getAll = (event, context, callback) => {
-  // fetch all todos from the database
-  dynamoDb.scan(params, (error, result) => {
-    // handle potential errors
-    if (error) {
-      console.error(error);
-      callback(null, {
-        statusCode: error.statusCode || 501,
-        headers: { 'Content-Type': 'text/plain' },
-        body: 'Couldn\'t fetch the todos.',
-      });
-      return;
-    }
+  const options = { 
+    method: 'GET',
+    url: 'https://swapi.py4e.com/api/planets',
+    headers: 
+     { 
+       'Content-Type': 'application/json'
+     }}
 
-    // create a response
-    const response = {
-      statusCode: 200,
-      body: JSON.stringify(result.Items),
-    };
-    callback(null, response);
+     request (options, function (error, response, body) {
+      callback(null , {
+          statusCode : 200 ,
+          body
+      })
   });
+
 };
