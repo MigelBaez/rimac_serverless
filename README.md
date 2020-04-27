@@ -1,8 +1,8 @@
 # rimac_serverless
 
 ## Deploy:
-npm install
-serverless deploy -v
+* npm install
+* serverless deploy -v
 
 
 ## Local
