@@ -12,7 +12,7 @@ module.exports.create = async (event, context, callback) => {
     callback(null, {
       statusCode: 400,
       headers: { 'Content-Type': 'text/plain' },
-      body: 'Couldn\'t create the todo item.',
+      body: 'campos obligatorios.',
     });
     return;
   }

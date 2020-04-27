@@ -29,9 +29,10 @@ function addCliente(cliente){
     return new Promise((resolve, reject) => {
         dynamoDb.put(params, (error) => {
         if (error) {
-            resolve({'status': 'error', 'message': "Error en el regisro."});
+            resolve({'status': 'error', 'message': "Error al crear el regisro."});
         }
-        resolve({'status': 'create', 'message': "Se registro exitosamente."});
+        console.log(params)
+        resolve( params.Item);
       });
     });
   } 
