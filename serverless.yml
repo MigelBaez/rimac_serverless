@@ -37,6 +37,8 @@ functions:
 
   getAllPlanets:
     handler: src/functions/startwars/planets.getAll
+    environment: 
+        API_ENDPOINT: "https://swapi.py4e.com/api/"
     events:
       - http:
           path: planets

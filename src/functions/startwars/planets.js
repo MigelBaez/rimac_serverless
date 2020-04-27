@@ -1,12 +1,13 @@
 'use strict';
 
 const request  = require('request');
-
+const url = process.env.API_ENDPOINT;
 
 module.exports.getAll = (event, context, callback) => {
+  console.log(url)
   const options = { 
     method: 'GET',
-    url: 'https://swapi.py4e.com/api/planets',
+    url: url +'planets',
     headers: 
      { 
        'Content-Type': 'application/json'
