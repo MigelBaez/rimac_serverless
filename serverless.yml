@@ -6,7 +6,7 @@ provider:
   name: aws
   runtime: nodejs10.x
   environment:
-    DYNAMODB_TABLE: ${self:service}-${opt:stage, self:provider.stage}
+    DYNAMODB_TABLE: 'cliente_rimac'
   iamRoleStatements:
     - Effect: Allow
       Action:
@@ -20,28 +20,28 @@ provider:
 
 functions:
   createCliente:
-    handler: src/functions/clientes/clientes.create
+    handler: src/app.addCliente
     events:
       - http:
-          path: clientes
+          path: cliente
           method: post
           cors: true
 
   getAllCliente:
-    handler: src/functions/clientes/clientes.getAll
+    handler: src/app.getCliente
     events:
       - http:
-          path: clientes
+          path: cliente
           method: get
           cors: true
 
   getAllPlanets:
-    handler: src/functions/startwars/planets.getAll
-    environment: 
+    handler: src/app.getPlanets
+    environment:
         API_ENDPOINT: "https://swapi.py4e.com/api/"
     events:
       - http:
-          path: planets
+          path: planet
           method: get
           cors: true
 
@@ -63,3 +63,8 @@ resources:
           ReadCapacityUnits: 1
           WriteCapacityUnits: 1
         TableName: ${self:provider.environment.DYNAMODB_TABLE}
+
+plugins:
+  - serverless-plugin-reducer
+  - serverless-offline
+  - serverless-offline-direct-lambda
