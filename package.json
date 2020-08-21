@@ -7,13 +7,16 @@
   "scripts": {
     "lint": "eslint . --ext .js,.ts,.tsx -f codeframe",
     "lint:fix": "eslint . --ext .js,.ts,.tsx -f codeframe --fix",
-    "start": "serverless offline start --stage DESA --functionsFile local"
+    "start": "serverless offline start --stage DESA --functionsFile local",
+    "test": "jest",
+    "test-coverage": "jest --coverage"
   },
   "dependencies": {
     "@hapi/joi": "^17.1.1",
     "@hapi/joi-date": "2.0.1",
     "aws-sdk": "^2.663.0",
     "axios": "^0.19.2",
+    "jest": "^26.4.1",
     "lodash": "4.17.15",
     "moment": "2.24.0",
     "object-mapper": "6.2.0",

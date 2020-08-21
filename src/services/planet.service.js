@@ -1,6 +1,6 @@
 const ClienteRepository = require('../repositories/planet.repository');
 const planetMapper = require('../mappers/planet.mapper');
-const ObjectMapper = require('object-mapper');
+const { mapperList} = require('../components/mapper.component');
 
 module.exports = {
 
@@ -8,7 +8,8 @@ module.exports = {
     const planets =  await ClienteRepository.getPlanets();
     const {data} = planets;
     const { results } = data;
-        const mapper = results.map((element) => (ObjectMapper(element, planetMapper)));
-        return mapper;
+    console.log('***result***', data);
+    const mapper = mapperList(results, planetMapper);
+    return mapper;
     },
 }

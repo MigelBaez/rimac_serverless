@@ -1,0 +1,16 @@
+{
+  "results": [
+    {
+      "nombre": "Tatooine",
+      "periodoRotacion": "23",
+      "periodoOrbital": "304",
+      "diametro": "10465",
+      "clima": "arid",
+      "gravedad": "1 standard",
+      "terreno": "desert",
+      "superficieAgua": "1",
+      "poblacion": "200000"
+    }
+
+  ]
+}
