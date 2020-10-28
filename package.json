@@ -16,7 +16,7 @@
     "@hapi/joi-date": "2.0.1",
     "aws-sdk": "^2.663.0",
     "axios": "^0.19.2",
-    "jest": "^26.4.1",
+    "jest": "^26.5.2",
     "object-mapper": "6.2.0",
     "serverless-offline": "^6.5.0",
     "serverless-offline-direct-lambda": "0.0.1",
