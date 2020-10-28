@@ -14,7 +14,7 @@
   "dependencies": {
     "@hapi/joi": "^17.1.1",
     "@hapi/joi-date": "2.0.1",
-    "aws-sdk": "^2.663.0",
+    "aws-sdk": "^2.768.0",
     "axios": "^0.19.2",
     "jest": "^26.4.1",
     "object-mapper": "6.2.0",
