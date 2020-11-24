@@ -20,7 +20,7 @@
     "object-mapper": "6.2.0",
     "serverless-offline": "^6.5.0",
     "serverless-offline-direct-lambda": "0.0.1",
-    "serverless-plugin-reducer": "^3.2.3",
+    "serverless-plugin-reducer": "^3.2.4",
     "uuid": "^2.0.3"
   },
   "devDependencies ": {
